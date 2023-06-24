@@ -1,0 +1,21 @@
+/*
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Pathway Extreme', sans-serif;
+
+*/
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    font-family: 'Pathway Extreme', sans-serif;
+    font-weight: bolder;
+}
+
+#navbar img{
+
+    height: 40px;
+    margin: 5px 20px;
+}   
