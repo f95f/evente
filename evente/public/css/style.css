@@ -9,6 +9,7 @@ font-family: 'Josefin Sans', sans-serif;
 :root{
 
     --LIGHT: #DBDBD5;
+    --GREYED: #a7a7a2;
     --ACCENT1: #C2AC3D;
     --ACCENT2: #7B6E25;
     --DARK1: #332D0F;
@@ -23,11 +24,12 @@ body{
     min-height: 100vh;
     padding-bottom:100px;
     position: relative;
+    background-color: var(--LIGHT);
 }
 header{
     background-color: var(--ACCENT2);
     border-bottom: 2px solid var(--ACCENT1);
-    padding: 0 15px;
+    padding: 0 20px;
 }
 .row{
     margin: 0;
@@ -37,15 +39,20 @@ header{
 }
 .btn-primary{
     background-color: var(--ACCENT1);
-    color: var(--LIGHT);
+    text-transform: uppercase;
     border: none;
     border-radius: 0;
+    padding: 15px 45px;
+    box-shadow: 2px 2px 6px #11111133;
+    transition: all .2s;
 }
 .btn-primary:hover{
     background-color: var(--ACCENT2);
+    box-shadow: 0px 0px 3px #11111133;
 }
-.btn-primary:focus{
-    background-color: var(--DARK1);
+.btn-primary:focus, .btn-primary:active{
+    background-color: var(--DARK1) !important;
+    box-shadow: 0px 0px 3px #11111133;
 }
 h1, h2, h5{
     font-family: 'Josefin Sans', sans-serif;
@@ -75,6 +82,8 @@ h1, h2, h5{
     font-size: 16px;
     margin: 0 5px;
     text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
     color: var(--LIGHT);
 }
 .nav-item a:hover{
@@ -83,19 +92,24 @@ h1, h2, h5{
 
 /* -------- pesquisar -------- */
 
+#mask{
+    background-color: #22222244;
+    padding: 120px;
+    height: 400px;
+}
+
 #search-container{
     background-image: url(../img/banner4.jpg);
     background-size: cover;
     background-position: center;
     height: 400px;
-    padding: 120px;
     text-align: center;
 }
 
 #search-container h1{
     text-transform: uppercase;
-    font-size: 50px;
-    color: var(--ACCENT2);
+    font-size: 4em;
+    color: var(--LIGHT);
     text-shadow: 2px 2px 6px #22222266
 }
 
@@ -106,20 +120,119 @@ h1, h2, h5{
 
 #search-container input{
     border-radius: 0;
-    background-color: #11111111;
     border: none;
     border-bottom: 3px solid var(--ACCENT1);
     padding: 15px 20px;
     text-transform: uppercase;
+    background-color: #11111110;
     text-align: center;
-    color: var(--ACCENT2);
+    color: var(--LIGHT);
     text-shadow: 1px 1px 2px #22222222;
 }
 #search-container input:focus{
     outline: none !important;
+    background-color: #11111133;
     box-shadow: none;
     border: 0;
 }
 
 /* ----- Conteúdo ------ */
 
+#events-container{
+    padding: 30px 50px;
+}
+#events-container h2{
+    font-size: 3em;
+    color: var(--ACCENT2);
+    padding: 0; 
+    text-shadow: 1px 1px 2px #22222222;
+}
+#events-container .subtitle{
+    color: var(--GREYED);
+    margin-bottom: 30px;
+    margin-left: 5px;
+}
+#cards-container{
+    display: flex;
+
+}
+#events-container .card{
+    flex: 1 1 0;
+    max-width: 25%;
+    padding: 0;
+    margin: 5px;
+    border-radius: 0;
+    box-shadow: 2px 2px 6px #11111133;
+    outline: 0px solid var(--GREYED);
+    transition: all .2s;
+}
+#events-container .card:hover{
+    outline: 1px solid var(--ACCENT1);
+    box-shadow: 0px 0px 2px #11111133;
+}
+
+#events-container img{
+    max-height: 350px;
+}
+
+.card .card-date{
+    color: var(--GREYED);
+    font-size: 12px;
+}
+
+hr{
+    margin-bottom: 30px;
+}
+
+.card .card-title{
+    color: var(--DARK1);
+    font-weight: 400;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #22222222;
+}
+
+.card .card-description{
+    color: var(--ACCENT2);
+    font-size: 12px;
+}
+
+.card .card-participants{
+    color: var(--GREYED);
+    font-size: 12px;
+}
+
+.card .card-city{
+    color: var(--GREYED);
+    font-size: 12px;
+    float: right;
+}
+
+ion-icon{
+    color: var(--GREYED);
+}
+
+/* ----- footer ----- */
+
+footer{
+    text-align: center;
+    background-color: var(--ACCENT2);
+    border-top: 2px solid var(--ACCENT1);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+footer p{
+    color: var(--LIGHT);
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+footer #logo{
+    color: var(--ACCENT1);
+    text-transform: lowercase;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+}

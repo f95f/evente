@@ -50,7 +50,9 @@
     @yield('content')
 
     <footer>
-        <p>Evente &copy; 2023</p>
+        <p>
+            <a id = "logo" href = "/" alt = "evente - home">Evente</a>
+            &copy; 2023</p>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
