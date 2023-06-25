@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventoController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [EventoController::class, 'index']);
+Route::get('/evento/criar', [EventoController::class, 'create']);
 
 //Route::get('/produtos/{id?}', function ($id = 0) {
 Route::get('/produtos', function () {
