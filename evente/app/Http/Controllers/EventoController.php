@@ -43,4 +43,11 @@ class EventoController extends Controller{
         $event -> save();
         return redirect('/')->with('msg', 'Evento Criado!');
     }
+
+    public function show($id){
+
+        $evento = Event::findOrFail($id);
+        return view("evento.mostrar", ['evento' => $evento]);
+
+    }
 }

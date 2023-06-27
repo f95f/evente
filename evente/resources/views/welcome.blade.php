@@ -23,8 +23,7 @@
         @foreach($eventos as $event)
 
             <div class="card col-md-3">
-
-                <img src="img/events/{{ $event -> image}}" alt="{{$event -> title}}">
+                <img src="/img/events/{{ $event -> image}}" alt="{{$event -> title}}">
                 <div class="card-body">
 
                     <p class="card-date">10/10/1010 
@@ -39,7 +38,7 @@
                     <p class="card-description">{{$event -> description}}</p>
                     <p class="card-participants">X Participantes</p>
                     <hr>
-                    <a href="#" class="btn btn-primary">Saber mais</a>
+                    <a href="/evento/{{ $event -> id }}" class="btn btn-primary">Saber mais</a>
 
                 </div>
             </div>

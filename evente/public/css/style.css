@@ -331,3 +331,55 @@ footer #logo{
 #btnCriar{
     margin-bottom: 15px;
 }
+
+/* ----- página de exibição do evento  ----- */
+
+#img-container{
+    margin: 50px 0;
+    padding: 0;
+    box-shadow: 3px 3px 8px #12331366;
+    border: 2px solid var(--ACCENT1);
+}
+#info-container{
+    margin: 50px 0;
+    padding: 0 50px; 
+    font-weight: 300;
+}
+
+#info-container h1{
+    font-size: 3em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--ACCENT2);
+    text-shadow: 1px 1px 4px #22222233;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#info-container p{
+    margin: 20px 0; 
+    display: flex;
+}
+
+#info-container ion-icon{
+    color: var(--ACCENT2);
+    margin-right: 5px;
+    font-size: 22px;
+}
+
+#description-container{
+    padding: 0;
+    margin-bottom: 30px;
+}
+#description-container h3{
+    font-weight: 300;
+    font-size: 2.4em;
+    color: var(--ACCENT2);
+    text-shadow: 1px 1px 4px #22222233;
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+#description-container p{
+    color: var(--DARK1);
+    font-weight: 300;
+    font-size: 18px;
+}
