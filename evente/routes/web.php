@@ -5,6 +5,7 @@ use App\Http\Controllers\EventoController;
 
 Route::get('/', [EventoController::class, 'index']);
 Route::get('/evento/criar', [EventoController::class, 'create']);
+Route::post('/evento', [EventoController::class, 'store']);
 
 //Route::get('/produtos/{id?}', function ($id = 0) {
 Route::get('/produtos', function () {

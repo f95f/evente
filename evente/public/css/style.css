@@ -15,6 +15,10 @@ font-family: 'Josefin Sans', sans-serif;
     --DARK1: #332D0F;
     --DARK2: #211D0A;
 
+    --SUCCESS-DARK: #123313;
+    --SUCCESS-CLEAR: #BDC8BC;
+    --SUCCESS-ACCENT: #4CC23B;
+
 }
 *{
     font-family: 'Open Sans', sans-serif;
@@ -29,7 +33,17 @@ body{
 header{
     background-color: var(--ACCENT2);
     border-bottom: 2px solid var(--ACCENT1);
-    padding: 0 20px;
+    padding: 0 20px;    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+main{
+    padding-top: 78px;
+}
+hr{
+    border: 1px solid var(--ACCENT2);
 }
 .row{
     margin: 0;
@@ -37,7 +51,21 @@ header{
 .container-fluid{
     padding: 0;
 }
-.btn-primary{
+
+.msg{
+    background-color: var(--SUCCESS-ACCENT);
+    color: var(--LIGHT);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 300;
+    width: 100%;
+    text-shadow: 2px 2px 4px #12331333;
+    box-shadow: 2px 2px 8px #12331366;
+}
+
+.btn-primary{       
     background-color: var(--ACCENT1);
     text-transform: uppercase;
     border: none;
@@ -93,22 +121,26 @@ h1, h2, h5{
 /* -------- pesquisar -------- */
 
 #mask{
-    background-color: #22222244;
+    background-color: #22222266;
     padding: 120px;
     height: 400px;
+    backdrop-filter: blur(8px);
 }
 
 #search-container{
+    padding: 0;
     background-image: url(../img/banner4.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 400px;
     text-align: center;
 }
 
 #search-container h1{
     text-transform: uppercase;
-    font-size: 4em;
+    font-size: 3.2em;
     color: var(--LIGHT);
     text-shadow: 2px 2px 6px #22222266
 }
@@ -119,19 +151,20 @@ h1, h2, h5{
 }
 
 #search-container input{
-    border-radius: 0;
+    border-radius: 50px;
     border: none;
-    border-bottom: 3px solid var(--ACCENT1);
     padding: 15px 20px;
     text-transform: uppercase;
-    background-color: #11111110;
-    text-align: center;
-    color: var(--LIGHT);
+    text-align: center; 
+    color: var(--DARK1);
+    background-color: #DBDBD5bb;
+    box-shadow: inset 3px 3px 6px #22222266;
     text-shadow: 1px 1px 2px #22222222;
 }
 #search-container input:focus{
-    outline: none !important;
-    background-color: #11111133;
+    box-shadow: 3px 3px 6px #222222aa;
+    background-color: #DBDBD5bb;
+    color: var(--DARK1);
     box-shadow: none;
     border: 0;
 }
@@ -157,10 +190,10 @@ h1, h2, h5{
 
 }
 #events-container .card{
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 25%;
     padding: 0;
-    margin: 5px;
+    margin: .5%;
     border-radius: 0;
     box-shadow: 2px 2px 6px #11111133;
     outline: 0px solid var(--GREYED);
@@ -235,4 +268,66 @@ footer #logo{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 26px;
     text-decoration: none;
+}
+
+/* ----- formulário de criação de eventos  ----- */
+
+#event-create-container{
+    margin-top: 120px;
+}
+
+#event-create-container h1{
+    color: var(--DARK1);
+    text-shadow: 1px 1px 4px #22222233;
+}
+
+.form-group{
+    margin: 20px 0;
+}
+.form-group #image{
+    width: 100%;
+}
+.form-group label{
+    margin-bottom: 5px;
+    color: var(--DARK1);
+    font-weight: 300;
+    font-size: 18px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+    padding: 15px;
+    border-radius: 0;
+    color: var(--DARK1);
+    box-shadow: 2px 2px 6px #11111133;
+    outline: 0px solid var(--ACCENT1);
+    border: 0;
+    transition: all .4s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    box-shadow: 1px 1px 2px #11111133;
+    outline: 1px solid var(--ACCENT1);
+    border: 0;
+}
+.form-group input:active,
+.form-group select:active,
+.form-group textarea:active{
+    padding: 15px;
+    border-radius: 0;
+    color: var(--DARK1);
+    box-shadow: 1px 1px 2px #11111133;
+    border: 0;
+}
+.form-group textarea{
+    margin-bottom: 30px;
+}
+.form-group select.selected{
+    border-radius: 0;
+    padding: 5px;
+    background-color: var(--ACCENT1);
+}
+#btnCriar{
+    margin-bottom: 15px;
 }

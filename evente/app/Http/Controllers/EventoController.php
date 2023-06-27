@@ -19,4 +19,28 @@ class EventoController extends Controller{
         return view('evento.criar');
 
     }
+
+    public function store(Request $request){
+
+        $event = new Event;
+        $event -> title = $request -> txtTitle;
+        $event -> city = $request -> txtCidade;
+        $event -> private = $request -> txtPrivado;
+        $event -> description = $request -> txtDesc;
+
+        if($request -> hasFile('image') && $request -> file('image') -> isValid()){
+
+            $requestImage = $request -> image;
+
+            $extension = $requestImage -> extension();
+            $imageName = md5($requestImage -> getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage -> move(public_path('img/events'), $imageName);
+
+            $event -> image = $imageName;
+        }
+
+        $event -> save();
+        return redirect('/')->with('msg', 'Evento Criado!');
+    }
 }

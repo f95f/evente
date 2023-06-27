@@ -44,19 +44,29 @@
                 
                 </div>
             </nav>
-        
         </header>
 
-    @yield('content')
+        <main>
+            <div class="container-fluid">
+                <div class="row">
 
-    <footer>
-        <p>
-            <a id = "logo" href = "/" alt = "evente - home">Evente</a>
-            &copy; 2023</p>
-    </footer>
+                    @if(session('msg'))
+                        <p class="msg">{{session('msg')}}</p>
+                    @endif
+                    @yield('content')
+                    
+                </div>
+            </div>
+        </main>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <footer>
+            <p>
+                <a id = "logo" href = "/" alt = "evente - home">Evente</a>
+                &copy; 2023</p>
+        </footer>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     </body>
 </html>

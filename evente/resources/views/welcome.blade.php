@@ -24,7 +24,7 @@
 
             <div class="card col-md-3">
 
-                <img src="img/placeholder.png" alt="{{$event -> title}}">
+                <img src="img/events/{{ $event -> image}}" alt="{{$event -> title}}">
                 <div class="card-body">
 
                     <p class="card-date">10/10/1010 
@@ -33,6 +33,7 @@
                             {{$event -> city}}
                         </span>
                     </p>
+                    
                     <hr>
                     <h5 class="card-title">{{$event -> title}}</h5>
                     <p class="card-description">{{$event -> description}}</p>
